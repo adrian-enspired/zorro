@@ -1,0 +1,41 @@
+{
+  "name": "php-enspired/zorro",
+  "description": "zorro provides utilities and components for building and managing object-oriented bitmasks.",
+  "type": "library",
+  "homepage": "https://php.enspi.red",
+  "license": "GPL-3.0 (only)",
+  "authors": [
+    {
+      "name": "Adrian",
+      "email": "adrian@enspi.red",
+      "homepage": "http://enspi.red"
+    }
+  ],
+  "support": {
+    "email": "zorro@php.enspi.red",
+    "irc": "irc://irc.libera.chat/php-enspired",
+    "chat": "https://web.libera.chat/#php-enspired",
+    "source": "https://github.com/php-enspired/zorro"
+  },
+  "require": {
+    "php": "^8.1",
+    "php-enspired/exceptable": "^4"
+  },
+  "require-dev": {
+    "phan/phan": "^5.4",
+    "phpunit/phpunit": "^10"
+  },
+  "autoload": {
+    "psr-4": {
+      "at\\zorro\\": "src/"
+    }
+  },
+  "scripts": {
+    "build:dist": "bin/build-dist",
+    "build:locales": "genrb resources/language/*.txt -d resources/language/",
+    "test:analyze": "vendor/bin/phan",
+    "test:unit" : "vendor/bin/phpunit tests",
+    "wiki:update": "git subtree push --prefix docs wiki master",
+    "wiki:update-docs": "git subtree pull --prefix docs wiki master --squash --message='Merge wiki updates into docs'"
+  }
+}
